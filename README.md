@@ -1,2 +1,39 @@
 # Microprocessor
 Write an assembly language program to perform sum of digits for 2, 3 digits Numbers
+Program-
+
+2	Digit Addition
+
+.MODEL SMALL
+.DATA
+N1 DB 23H
+.CODE
+.STARTUP
+MOV AL,N1
+MOV BL,AL
+AND AL,0FH
+AND BL,0F0H
+ROR BL,04H
+ADD BL,AL
+.EXIT
+END
+
+3	Digit Addition
+
+.MODEL SMALL
+.DATA
+N1 DW 0234H
+.CODE
+.STARTUP
+MOV AX,N1
+MOV BX,AX
+MOV CX,AX
+AND AX,000FH
+AND BX,00F0H
+ROR BX,04H
+AND CX,0F00H
+ROR CX,08H
+ADD BX,AX
+ADD BX,CX
+.EXIT
+END
